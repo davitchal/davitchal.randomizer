@@ -20,18 +20,29 @@ let cars = [{
 
     let randomIndex;
     let animating = false;
+    let car = [];
 
+function preload(){
+      for (let i=0; i<6; i++){
+        //var img = new Image();
+        //img.src = 'assets/car_0.jpg';
+        //car[i] = img;
+        car[i] = loadImage('assets/screenshot.jpg');
+      }
+
+    }
 function setup() {
   createCanvas(400, 400);
   background(200);
   textSize(32);
   text("Click to Randomize", 50, 50);
-
+  imageMode(CENTER);
 }
 
 function draw() {
+  //console.log(car[0]);
   if (animating == true){
-    ellipse(random(width), random(height), random(50, 200));
+    image(car[0], 10, 10, 50, 50);
   }
 }
 
